@@ -1,24 +1,62 @@
-# README
+# データベース設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type    | Options                |
+| ------------------ | ------- | ---------------------- |
+| email              | string  | null:false,unique:true |
+| encrypted_password | string  | null:false             |
+| last_name          | string  | null:false             |
+| first_name         | string  | null:false             |
+| last_name_kana     | string  | null:false             |
+| first_name_kana    | string  | null:false             |
+| employee_num       | string  | null:false             |
 
-* Ruby version
+### Association
 
-* System dependencies
 
-* Configuration
+## projects テーブル(案件情報)
 
-* Database creation
+| Column                 | Type                 | Options          |
+| ---------------------- | -------------------- | ---------------- |
+| name                   | string               | null: false      |
+| job_num                | string               | null: false      |
+| order_amount           | integer              | null: false      |
+| delivery_date          | date                 | null: false      |
+| create_user_id         | references           | foreign_key:true |
 
-* Database initialization
+### Association
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## groups テーブル(グループ情報)
 
-* Deployment instructions
+| Column                 | Type                 | Options          |
+| ---------------------- | -------------------- | ---------------- |
+| name                   | string               | null: false      |
+| create_user_id         | references           | foreign_key:true |
 
-* ...
+
+### Association
+
+## group_members テーブル(グループに所属するメンバーの情報)
+
+| Column                 | Type                 | Options          |
+| ---------------------- | -------------------- | ---------------- |
+| group_id               | references           | foreign_key:true |
+| user_id                | references           | foreign_key:true |
+
+### Association
+
+
+## tasks テーブル(タスク情報)
+
+| Column                 | Type                 | Options          |
+| ---------------------- | -------------------- | ---------------- |
+| name                   | string               | null: false      |
+| content                | text                 |                  |
+| time_limit             | date                 |                  |
+| project_id             | references           | foreign_key:true |
+| create_user_id         | references           | foreign_key:true |
+
+### Association
+
