@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_06_08_154344) do
     t.string "job_num", null: false
     t.integer "order_amount", null: false
     t.date "delivery_date", null: false
-    t.integer "create_user_id", null: false
+    t.integer "create_user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

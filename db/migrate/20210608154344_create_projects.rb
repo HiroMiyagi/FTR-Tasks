@@ -6,7 +6,7 @@ class CreateProjects < ActiveRecord::Migration[6.0]
       t.string :job_num, null: false
       t.integer :order_amount, null: false
       t.date :delivery_date, null: false
-      t.integer :create_user_id, null: false
+      t.integer :create_user_id
 
       t.timestamps
     end

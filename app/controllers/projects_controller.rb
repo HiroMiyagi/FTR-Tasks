@@ -1,4 +1,5 @@
-class ProjectController < ApplicationController
+class ProjectsController < ApplicationController
+
   def new
     @project = Project.new
   end
@@ -16,4 +17,5 @@ class ProjectController < ApplicationController
   def project_params
     params.require(:project).permit(:name, :job_num, :order_amount, :delivery_date).merge(create_user_id: current_user.id)
   end
+
 end
