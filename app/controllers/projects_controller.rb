@@ -5,7 +5,8 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project(project_params)
+    @project = Project.new(project_params)
+    binding.pry
     if @project.save
       redirect_to :root
     else
