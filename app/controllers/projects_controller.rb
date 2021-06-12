@@ -36,6 +36,6 @@ class ProjectsController < ApplicationController
   end
 
   def set_project
-    @project = Project.find_by(id: params[:id])
+    @project = Project.find(params[:id])
   end
 end
