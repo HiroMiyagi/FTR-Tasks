@@ -1,0 +1,23 @@
+<div class="projectnewPage">
+  <div class="container">
+    <%= form_with model: @project, url: { action: :create }, class: "new_project", local: true do |f| %>
+      <% if @project.errors.any? %>
+        <p class="text-danger">タイトルは1～255文字以内で入力してください</p>
+      <% end %>
+      <%= f.label :name %>
+      <%= f.text_field :name, autofocus: true, class: "form-control projectName", placeholder: "プロジェクト名" %>
+
+      <%= f.label :job_num %>
+      <%= f.text_field :job_num, autofocus: true, class: "form-control jobNumber", placeholder: "JOB番号" %>
+
+      <%= f.label :order_amount %>
+      <%= f.text_field :order_amount, autofocus: true, class: "form-control orderAmount", placeholder: "検収金額" %>
+
+      <%= f.label :delivery_date %>
+      <%= f.date_field :delivery_date, autofocus: true, class: "form-control deliveryDate", placeholder: "完了日" %>
+
+      <div class="text-center"><%= f.submit "作成", class: "submitBtn" %></div>
+    <% end %>
+  </div>
+</div>
+

@@ -1,3 +1,17 @@
-<p>このページは仮のトップページです。</p>
+<div class="topPage">
+  <div class="projectWrapper">
+    <% @projects.each do |project| %>
+      <div class="project">
+        <div class="project_header">
+          <h2 class="project_header_title"><%= project.name %></h2>
+          <h3 class="project_header_job_num"><%= project.job_num %></h3>
+          <div class="project_header_action">
+            <%= link_to content_tag(:i, '', class: 'fas fa-trash'), project, method: :delete, data: { confirm: "#{project.name}を削除して大丈夫ですか？" } %>
 
-<%= link_to "仮のボタンです", "#", class: "btn btn-primary" %>
+            <%= link_to(content_tag(:i, '', class: 'fas fa-pen'), edit_project_path(project)) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

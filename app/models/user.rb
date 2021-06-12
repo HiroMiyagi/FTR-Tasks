@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  #アソシエーション########################################################################################################
+  has_many :projects, dependent: :destroy, foreign_key: :create_user_id
+  #アソシエーション終わり####################################################################################################
+
   #バリデーション##########################################################################################################
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください'
@@ -19,6 +23,6 @@ class User < ApplicationRecord
   end
   
   validates :employee_num, presence: true
-
   #バリデーション終わり####################################################################################################
+
 end
