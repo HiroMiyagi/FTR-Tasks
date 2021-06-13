@@ -1,31 +1,25 @@
 .topPage {
   min-height: 93vh;
   padding-top: 30px;
-  background: #bababa;
+  background: rgb(0, 121, 191);
   overflow-x: scroll;
   .projectWrapper {
     display: flex;
     height: 100%;
-    align-items: baseline;
+    // align-items: baseline;
     .project {
       position: relative;
-      background: #e2e4e6;
+      background: #ebecf0;
       padding: 10px;
       margin-left: 20px;
       min-width: 250px;
-      &:last-child {
-        margin-right: 20px;
-        border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px;
-}
+      border-radius: 5px;
       &_header {
         margin-bottom: 20px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        color: #172b4d;
         &_title {
           font-size: 20px;
           margin: 0;
@@ -42,6 +36,17 @@
           .fa-trash {
             margin-right: 10px;
           }
+        }
+      }
+      &:last-child {
+        margin-right: 20px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        background-color: hsla(0, 0%, 100%, .24);
+        .mr-1 {
+          color: white
         }
       }
     }
