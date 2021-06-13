@@ -1,0 +1,27 @@
+<div class="tasknewPgae">
+  <div class='container'>
+    <%= form_with model: @task, url: { action: :create }, html: { class: 'tasknewForm' }, local: true do |f| %>
+      <%= f.hidden_field :project_id, value: @project.id %>
+      <% if @task.errors.any? %>
+        <p class="text-danger">タイトルは1～255文字以内で入力してください</p>
+      <% end %>
+      <div class="tasknewForm_title">
+        <%= f.label :name %>
+        <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "タスク名" %>
+      </div>
+      <div class="tasknewForm_content">
+        <%= f.label :content %>
+        <%= f.text_area :content, autofocus: true, class: "form-control", placeholder: "タスク内容" %>
+      </div>
+      <div class="tasknewForm_time_limit">
+        <%= f.label :time_limit %>
+        <%= f.date_field :time_limit, autofocus: true, class: "form-control", placeholder: "期限" %>
+      </div>
+      <div class="tasknewForm_priority">
+        <%= f.label :priority_id %>
+        <%= f.text_field :priority_id, autofocus: true, class: "form-control", placeholder: "優先度" %>
+      </div>
+      <div class="text-center"><%= f.submit "作成する", class: "submitBtn" %></div>
+    <% end %>
+  </div>
+</div>

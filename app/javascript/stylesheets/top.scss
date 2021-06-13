@@ -50,5 +50,33 @@
         }
       }
     }
+    .taskWrapper {
+      overflow-y: scroll;
+      max-height: 76vh;
+      .task {
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: white;
+        &_name {
+          font-size: 17px;
+        }
+        &_detail {
+          display: none;
+          &.is-exist {
+            display: block;
+            color: #999;
+            & > i {
+              display: block;
+            }
+          }
+        }
+      }
+      .addTask {
+        color: #8c8c8c;
+        &_link {
+          color: #8c8c8c;
+        }
+      }
+    }
   }
 }
