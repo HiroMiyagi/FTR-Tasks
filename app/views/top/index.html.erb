@@ -12,12 +12,14 @@
         </div>
         <div class="taskWrapper">
           <% project.tasks.each do |task| %>
-            <div class="task">
-              <h3 class="task_name"><%= task.name %></h3>
-              <% if task.content.size > 0 %>
-                <div class="task_detail is-exist"><i class="fas fa-bars"></i></div>
-              <% end %>
-            </div>
+            <%= link_to project_task_path(project, task), class:"taskDetail_link" do %>
+              <div class="task">
+                <h3 class="task_name"><%= task.name %></h3>
+                <% if task.content.size > 0 %>
+                  <div class="task_detail is-exist"><i class="fas fa-bars"></i></div>
+                <% end %>
+              </div>
+            <% end %>
           <% end %>
           <div class="addTask">
             <i class="far fa-plus-square"></i>

@@ -1,0 +1,29 @@
+<div class='taskdetailPage'>
+  <div class="container">
+    <div class="task">
+      <div class="task_name">
+        <h1><%= @task.name %></h1>
+        <div class="task_projectname">
+          プロジェクト: <%= @task.project.name %>
+        </div>
+      </div>
+      <div class="task_content">
+        <h2>タスク内容</h2>
+        <div><%= @task.content %></div>
+      </div>
+      <div class="task_time_limit">
+        <h2>期限</h2>
+        <div><%= @task.time_limit %></div>
+      </div>
+      <div class="task_priority_id">
+        <h2>優先度</h2>
+        <div><%= @task.priority_id %></div>
+      </div>
+      <div class="task_create_user_id">
+        <h2>作成者</h2>
+        <div><%= @task.create_user.last_name %></div>
+      </div>
+    </div>
+  </div>
+</div>
+

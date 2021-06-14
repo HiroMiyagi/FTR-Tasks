@@ -53,6 +53,10 @@
     .taskWrapper {
       overflow-y: scroll;
       max-height: 76vh;
+      .taskDetail_link {
+        text-decoration: none;
+        color: #323232;
+      }
       .task {
         margin-bottom: 10px;
         padding: 10px;
