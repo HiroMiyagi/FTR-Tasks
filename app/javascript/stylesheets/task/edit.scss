@@ -1,0 +1,9 @@
+.cardeditPgae {
+  .cardeditForm {
+    max-width: 500px;
+    margin: 70px auto 0;
+    &_title, &_content, &_time_limit, &_priority {
+      margin-bottom: 30px;
+    }
+  }
+}

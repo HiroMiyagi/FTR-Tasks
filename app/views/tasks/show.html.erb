@@ -38,6 +38,11 @@
         </div>        
         <div><%= @task.create_user.last_name %></div>
       </div>
+
+      <div class="task_btnArea">
+        <%= link_to '編集する', edit_project_task_path(@task.project, @task), class: "edit_btn" %>
+      </div>
+
     </div>
   </div>
 </div>
