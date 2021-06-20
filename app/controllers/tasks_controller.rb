@@ -20,6 +20,7 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @projects = Project.where(create_user: current_user)
   end
 
   def update
@@ -46,3 +47,4 @@ class TasksController < ApplicationController
   end
 
 end
+

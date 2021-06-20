@@ -9,6 +9,10 @@
         <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "タスク名" %>
       </div>
       <div class="taskeditForm_content">
+        <label>リスト名</label>
+        <%= select :task, :project_id, @projects.map{ |l| [l.name, l.id] }, {}, { class: 'form-control' } %>
+      </div>
+      <div class="taskeditForm_content">
         <%= f.label :content %>
         <%= f.text_area :content, autofocus: true, class: "form-control", placeholder: "タスク内容" %>
       </div>
@@ -24,3 +28,4 @@
     <% end %>
   </div>
 </div>
+
