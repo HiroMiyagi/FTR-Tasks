@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
 
-  before_action :set_task, only: [:show, :edit, :update]
+  before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def new
     @task = Task.new
@@ -28,6 +28,11 @@ class TasksController < ApplicationController
     else
       render action: :edit
     end
+  end
+
+  def destroy
+    @task.destroy
+    redirect_to :root
   end
 
   private
