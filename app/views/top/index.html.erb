@@ -11,7 +11,7 @@
           </div>
         </div>
         <div class="taskWrapper">
-          <% project.tasks.each do |task| %>
+          <% project.tasks.rank(:row_order).each do |task| %>
             <%= link_to project_task_path(project, task), class:"taskDetail_link" do %>
               <div class="task">
                 <h3 class="task_name"><%= task.name %></h3>
