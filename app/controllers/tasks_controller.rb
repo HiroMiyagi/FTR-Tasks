@@ -36,10 +36,16 @@ class TasksController < ApplicationController
     redirect_to :root
   end
 
+  def sort
+    task = Task.find(params[:task_id])
+    task.update(task_params)
+    render body: nil
+  end
+
   private
   
   def task_params
-    params.require(:task).permit(:name, :content, :time_limit, :priority_id, :project_id).merge(create_user_id: current_user.id)
+    params.require(:task).permit(:name, :content, :time_limit, :priority_id, :project_id, :row_order_position).merge(create_user_id: current_user.id)
   end
 
   def set_task
