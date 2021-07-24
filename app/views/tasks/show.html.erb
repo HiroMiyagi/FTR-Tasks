@@ -1,0 +1,55 @@
+<div class='taskdetailPage'>
+  <div class="container">
+    <div class="task">
+      <div class="task_name">
+        <div class="Heading">
+          <i class="fas fa-tasks"></i>
+          <h1><%= @task.name %></h1>
+        </div>
+        <div class="task_projectname">
+          プロジェクト: <%= @task.project.name %>
+        </div>
+      </div>
+      <div class="task_content">
+        <div class="Heading">
+          <i class="fas fa-bars"></i>
+          <h2>タスク内容</h2>
+        </div>
+        <div><%= @task.content %></div>
+      </div>
+      <div class="task_time_limit">
+        <div class="Heading">
+          <i class="far fa-clock"></i>
+          <h2>期限</h2>
+        </div>
+        <div><%= @task.time_limit %></div>
+      </div>
+      <div class="task_priority_id">
+        <div class="Heading">
+          <i class="far fa-flag"></i>
+          <h2>優先度</h2>
+        </div>        
+        <div><%= @task.priority_id %></div>
+      </div>
+      <div class="task_create_user_id">
+        <div class="Heading">
+          <i class="fas fa-user-edit"></i>
+          <h2>作成者</h2>
+        </div>        
+        <div><%= @task.create_user.last_name %></div>
+      </div>
+
+      <div class="task_btnArea">
+        <%= link_to '編集する', edit_project_task_path(@task.project, @task), class: "edit_btn" %>
+        <%= link_to '削除をする', project_task_path(@task.project, @task), class: "text-danger delete_btn", method: :delete, data: { confirm: "このカードを削除して大丈夫ですか?" } %>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+

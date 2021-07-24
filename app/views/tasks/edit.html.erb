@@ -1,0 +1,31 @@
+<div class="taskeditPgae">
+  <div class='container'>
+    <%= form_with model: @task, url: { action: :update }, html: { class: 'taskeditForm' }, local: true do |f| %>
+      <% if @task.errors.any? %>
+        <p class="text-danger">タイトルは1～255文字以内で入力してください</p>
+      <% end %>
+      <div class="taskeditForm_title">
+        <%= f.label :name %>
+        <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "タスク名" %>
+      </div>
+      <div class="taskeditForm_content">
+        <label>リスト名</label>
+        <%= select :task, :project_id, @projects.map{ |l| [l.name, l.id] }, {}, { class: 'form-control' } %>
+      </div>
+      <div class="taskeditForm_content">
+        <%= f.label :content %>
+        <%= f.text_area :content, autofocus: true, class: "form-control", placeholder: "タスク内容" %>
+      </div>
+      <div class="taskeditForm_time_limit">
+        <%= f.label :time_limit %>
+        <%= f.date_field :time_limit, autofocus: true, class: "form-control", placeholder: "期限" %>
+      </div>
+      <div class="taskeditForm_priority">
+        <%= f.label :priority_id %>
+        <%= f.text_field :priority_id, autofocus: true, class: "form-control", placeholder: "優先度" %>
+      </div>
+      <div class="text-center"><%= f.submit "更新する", class: "submitBtn" %></div>
+    <% end %>
+  </div>
+</div>
+

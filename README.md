@@ -55,8 +55,11 @@
 | name                   | string               | null: false      |
 | content                | text                 |                  |
 | time_limit             | date                 |                  |
+| priority_id            | integer              |                  |
 | project_id             | references           | foreign_key:true |
 | create_user_id         | references           | foreign_key:true |
+| row_order              | integer              | null: false |
+
 
 ### Association
 
