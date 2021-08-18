@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :groups, only: [:index]
+  resources :groups, only: [:index, :new]
 
 end
