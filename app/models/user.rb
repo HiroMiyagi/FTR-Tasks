@@ -7,6 +7,8 @@ class User < ApplicationRecord
   #アソシエーション########################################################################################################
   has_many :projects, dependent: :destroy, foreign_key: :create_user_id
   has_many :tasks, dependent: :destroy, foreign_key: :create_user_id
+  has_many :groups, through: :group_users
+  has_many :group_users
   #アソシエーション終わり####################################################################################################
 
   #バリデーション##########################################################################################################
