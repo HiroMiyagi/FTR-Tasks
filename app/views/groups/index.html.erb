@@ -2,14 +2,21 @@
   <h3 class="boad-title">グループボード</h3>
   <div class="container-fluid">
     <div class="row">
-      <div class="group-box col-3 p-3">
+      <% current_user.groups.each do |group| %>
+        <div class="group-box col-3 p-3">
+          <div class="group-name"><%= group.name %></div>
+          <div class="group-contents"></div>
+        </div>
+      <% end %>
+
+      <%# <div class="group-box col-3 p-3">
         <div class="group-name">ES3室2Gr</div>
         <div class="group-contents"></div>
       </div>
       <div class="group-box col-3 p-3">
         <div class="group-name">ES3室1Gr</div>
         <div class="group-contents"></div>
-      </div>
+      </div> %>
     </div>
   </div>
 </div>

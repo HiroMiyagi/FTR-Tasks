@@ -10,7 +10,9 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
+    user = User.find(@group.create_user_id)
     if @group.save
+      @group.users << user
       redirect_to root_path
     else
       render :new
@@ -20,6 +22,7 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name)
+    params.require(:group).permit(:name).merge(create_user_id: current_user.id)
   end
+
 end
