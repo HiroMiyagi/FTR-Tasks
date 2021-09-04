@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :tasks, dependent: :destroy, foreign_key: :create_user_id
   has_many :group_users
   has_many :groups, through: :group_users
+  has_many :group_projects
+  has_many :projects, through: :group_projects
   #アソシエーション終わり####################################################################################################
 
   #バリデーション##########################################################################################################

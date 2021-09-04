@@ -3,20 +3,13 @@
   <div class="container-fluid">
     <div class="row">
       <% current_user.groups.each do |group| %>
-        <div class="group-box col-3 p-3">
-          <div class="group-name"><%= group.name %></div>
-          <div class="group-contents"></div>
-        </div>
+        <%= link_to group_path(group) do %>
+          <div class="group-box col-3 p-3">
+            <div class="group-name"><%= group.name %></div>
+            <div class="group-contents"></div>
+          </div>
+        <% end %>
       <% end %>
-
-      <%# <div class="group-box col-3 p-3">
-        <div class="group-name">ES3室2Gr</div>
-        <div class="group-contents"></div>
-      </div>
-      <div class="group-box col-3 p-3">
-        <div class="group-name">ES3室1Gr</div>
-        <div class="group-contents"></div>
-      </div> %>
     </div>
   </div>
 </div>
