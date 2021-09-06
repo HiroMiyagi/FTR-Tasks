@@ -20,8 +20,8 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @group = Group.find(params[:id])
     @projects = Project.where(create_user: current_user).order("created_at ASC")
-
   end
 
   private

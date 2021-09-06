@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_04_060749) do
+ActiveRecord::Schema.define(version: 2021_09_06_134649) do
+
+  create_table "group_project_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.bigint "group_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["group_id"], name: "index_group_project_relations_on_group_id"
+    t.index ["project_id"], name: "index_group_project_relations_on_project_id"
+  end
 
   create_table "group_projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "group_id", null: false
@@ -77,6 +86,8 @@ ActiveRecord::Schema.define(version: 2021_09_04_060749) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "group_project_relations", "groups"
+  add_foreign_key "group_project_relations", "projects"
   add_foreign_key "group_projects", "groups"
   add_foreign_key "group_projects", "projects"
   add_foreign_key "group_users", "groups"

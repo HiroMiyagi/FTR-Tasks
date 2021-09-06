@@ -16,6 +16,7 @@
       <%= f.label :delivery_date %>
       <%= f.date_field :delivery_date, autofocus: true, class: "form-control deliveryDate", placeholder: "完了日" %>
 
+      <%#= f.hidden_field :group_id, value: params[:group_id] %>
       <div class="text-center"><%= f.submit "作成", class: "submitBtn" %></div>
     <% end %>
   </div>

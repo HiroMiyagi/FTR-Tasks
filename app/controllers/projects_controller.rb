@@ -6,8 +6,9 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    # group = Group.find(@project.create_user_id)
+    group = Group.find(params[:group_id])
     if @project.save
+      @projects.groups << group
       redirect_to :root
     else
       render action: :new
