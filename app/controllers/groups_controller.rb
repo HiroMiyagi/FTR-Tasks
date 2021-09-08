@@ -21,7 +21,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @projects = Project.where(create_user: current_user).order("created_at ASC")
+    @projects = Project.where(id: GroupProjectRelation.where(group_id: @group.id).map { |h| h[:project_id] }).order("created_at ASC")
   end
 
   private
