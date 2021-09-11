@@ -3,8 +3,8 @@ class Project < ApplicationRecord
     #アソシエーション########################################################################################################
     belongs_to :create_user, class_name: 'User', foreign_key: :create_user_id
     has_many :tasks, dependent: :destroy
-    has_many :group_project_relations
-    has_many :projects, through: :group_project_relations
+    has_many :group_project_relations, dependent: :destroy
+    has_many :projects, through: :group_project_relations, dependent: :destroy
   #アソシエーション終わり####################################################################################################
 
     #バリデーション##########################################################################################################
