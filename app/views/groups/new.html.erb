@@ -1,0 +1,16 @@
+<div class="groupnewPgae">
+  <div class='container'>
+    <%= form_with model: @group, local: true do |f| %>
+      <%# <%= f.hidden_field :list_id, value: @list.id %>
+      <% if @group.errors.any? %>
+        <p class="text-danger">タイトルは1～255文字以内で入力してください</p>
+      <% end %>
+      <div class="groupnewForm_title">
+        <%= f.label :name %>
+        <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "グループ名" %>
+      </div>
+      <div class="text-center"><%= f.submit "作成する", class: "submitBtn" %></div>
+      </div>
+    <% end %>
+  </div>
+</div>
