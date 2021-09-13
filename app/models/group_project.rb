@@ -17,4 +17,7 @@ class GroupProject
     GroupProjectRelation.create(group_id: group_id, project_id: project.id)
   end
 
+  # def group_destroy
+  #   GroupProjectRelation.destroy(group_id: group_id)
+  # end
 end

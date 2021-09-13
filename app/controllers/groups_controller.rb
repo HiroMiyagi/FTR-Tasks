@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :destroy]
+  before_action :set_group, only: [:show]
 
   def index
   end
@@ -24,6 +24,7 @@ class GroupsController < ApplicationController
   end
 
   def destroy
+    @group = Group.find(params[:id])
     @group.destroy
     redirect_to :root
   end
