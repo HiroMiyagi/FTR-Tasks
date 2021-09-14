@@ -3,12 +3,13 @@
   <div class="container-fluid">
     <div class="row">
       <% current_user.groups.each do |group| %>
-        <%= link_to group_path(group) do %>
-          <div class="group-box col-3 p-3">
+        <div class="group-box col-3 p-3">
+          <%= link_to group_path(group) do %>
             <div class="group-name"><%= group.name %></div>
             <div class="group-contents"></div>
-          </div>
-        <% end %>
+          <% end %>
+          <%= link_to content_tag(:i, '', class: 'fas fa-trash'), group, method: :delete, data: { confirm: "#{group.name}を削除して大丈夫ですか？" } %>
+        </div>
       <% end %>
     </div>
   </div>
