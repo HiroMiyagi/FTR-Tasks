@@ -11,6 +11,13 @@
           <%= link_to content_tag(:i, '', class: 'fas fa-trash'), group, method: :delete, data: { confirm: "#{group.name}を削除して大丈夫ですか？" } %>
         </div>
       <% end %>
+      <div class="creategroup-box col-3 p-3">
+        <%= link_to new_group_path do %>
+          <i class="far fa-plus-square"></i>
+          グループを作成
+        <% end %>
+      </div>
+
     </div>
   </div>
 </div>
