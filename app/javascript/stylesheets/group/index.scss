@@ -2,20 +2,33 @@
   // background-color: red;
 }
 
+.row {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .group-box {
   background-color: #026aa7;
+  padding: 0%;
   color: white;
   margin-right: 10px;
-  .group-name {
-    
+  .group {
+    height: 100%;
+    width: 100%;
+    display: block;
+    .group-name {
+      height: 100%;
+      width: 100%;
+      display: block;
+    }
   }
 }
 
+
+
 .creategroup-box {
   background-color: #091e420a;
-  color: white;
+  color:#172b4d;
   margin-right: 10px;
-  .group-name {
-    
-  }
+  text-decoration: none;
 }
