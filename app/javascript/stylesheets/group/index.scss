@@ -12,23 +12,42 @@
   padding: 0%;
   color: white;
   margin-right: 10px;
-  .group {
-    height: 100%;
-    width: 100%;
-    display: block;
-    .group-name {
-      height: 100%;
-      width: 100%;
-      display: block;
-    }
+  display: flex;
+}
+
+.group-link {
+  width: 80%;
+}
+
+.group-name {
+  text-decoration: none;
+  color: white;
+}
+
+.group-contents {
+  width: 20%;
+  text-align: right;
+  .trash-color {
+    color: #ebecf0;
   }
 }
 
-
+.group-link {
+  width: 100%;
+  height: 100%;
+}
 
 .creategroup-box {
   background-color: #091e420a;
-  color:#172b4d;
+  color:gray;
   margin-right: 10px;
   text-decoration: none;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.create-group-link {
+  color:gray;
+  text-decoration: none;
+  
 }
