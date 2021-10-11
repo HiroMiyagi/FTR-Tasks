@@ -2,11 +2,52 @@
   // background-color: red;
 }
 
+.row {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .group-box {
   background-color: #026aa7;
+  padding: 0%;
   color: white;
   margin-right: 10px;
-  .group-name {
-    
+  display: flex;
+}
+
+.group-link {
+  width: 80%;
+}
+
+.group-name {
+  text-decoration: none;
+  color: white;
+}
+
+.group-contents {
+  width: 20%;
+  text-align: right;
+  .trash-color {
+    color: #ebecf0;
   }
+}
+
+.group-link {
+  width: 100%;
+  height: 100%;
+}
+
+.creategroup-box {
+  background-color: #091e420a;
+  color:gray;
+  margin-right: 10px;
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.create-group-link {
+  color:gray;
+  text-decoration: none;
+  
 }

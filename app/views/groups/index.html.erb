@@ -4,13 +4,16 @@
     <div class="row">
       <% current_user.groups.each do |group| %>
         <div class="group-box col-3 p-3">
-          <%= link_to group_path(group) do %>
+          <%= link_to group_path(group), class: 'group-link' do %>
             <div class="group-name"><%= group.name %></div>
-            <div class="group-contents"></div>
           <% end %>
-          <%= link_to content_tag(:i, '', class: 'fas fa-trash'), group, method: :delete, data: { confirm: "#{group.name}を削除して大丈夫ですか？" } %>
+          <div class="group-contents"><%= link_to content_tag(:i, '', class: 'fas fa-trash trash-color'), group, method: :delete, data: { confirm: "#{group.name}を削除して大丈夫ですか？" } %></div>
         </div>
       <% end %>
+      <div class="creategroup-box col-3 p-3">
+        <i class="far fa-plus-square"></i>
+        <%= link_to "グループを作成", new_group_path, class: "create-group-link" %>
+      </div>
     </div>
   </div>
 </div>
